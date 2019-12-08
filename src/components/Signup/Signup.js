@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, Form, FormGroup, FormControl } from "react-bootstrap";
 import API from "../../utils/API";
 
 export class Signup extends React.Component {
@@ -20,7 +20,7 @@ export class Signup extends React.Component {
       console.error(error);
     }
   };
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
     });
@@ -30,7 +30,7 @@ export class Signup extends React.Component {
     return (
       <div className="Login">
         <FormGroup controlId="email" bsSize="large">
-          <ControlLabel>Email</ControlLabel>
+          <Form.Label>Email</Form.Label>
           <FormControl
             autoFocus
             type="email"
@@ -39,7 +39,7 @@ export class Signup extends React.Component {
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
-          <ControlLabel>Password</ControlLabel>
+          <Form.Label>Password</Form.Label>
           <FormControl
             value={password}
             onChange={this.handleChange}
@@ -47,7 +47,7 @@ export class Signup extends React.Component {
           />
         </FormGroup>
         <FormGroup controlId="cpassword" bsSize="large">
-          <ControlLabel>Confirm Password</ControlLabel>
+          <Form.Label>Confirm Password</Form.Label>
           <FormControl
             value={cpassword}
             onChange={this.handleChange}
